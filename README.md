@@ -2,6 +2,13 @@
 
 This is a single-page React application using Material-UI that implements a typeahead search bar and a user details page. The UI is fully responsive and follows clean code practices, including atomic design, exception handling, environment layering, and externalized configurations.
 
+<img src="./public/ss1.png" alt="ss1" width="500" style="margin:10px;" />
+<img src="./public/ss2.png" alt="ss2" width="500" style="margin:10px;" />
+<img src="./public/ss3.png" alt="ss3" width="500" style="margin:10px;" />
+<img src="./public/ss4.png" alt="ss4" width="500" style="margin:10px;" />
+<img src="./public/ss5.png" alt="ss5" width="500" style="margin:10px;" />
+
+
 ## Features
 - **Typeahead Search**: Provides real-time search suggestions as you type.
 - **Lazy Loading**: The user details page is loaded on demand to improve performance.
