@@ -1,0 +1,10 @@
+.app-container {
+  display: grid;
+  padding-top: 20px;
+}
+
+.page-footer{
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
