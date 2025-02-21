@@ -18,8 +18,8 @@ function App() {
   return (
     <Router>
       <ThemeProvider theme={theme}>
-        <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
         <CssBaseline />
+        <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
         <Container maxWidth="md" className="app-container">
           <Box>
             <SearchBar />

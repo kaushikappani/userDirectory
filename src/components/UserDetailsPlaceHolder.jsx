@@ -5,7 +5,7 @@ import { Card, CardContent, Typography, CardMedia, Container, Box } from "@mui/m
 
 export const UserDetailsPlaceHolder = () => {
     return (
-        <Container maxWidth="sm">
+        <Container style={{ width: "95vw", maxWidth: "600px" }}>
             <Card sx={{ mt: 3 }}>
                 <CardMedia
                     component="img"
