@@ -3,8 +3,16 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import config from "../../config";
 
-import { TextField, Autocomplete, Typography, Container } from "@mui/material";
-
+import {
+    TextField,
+    Autocomplete,
+    Typography,
+    Container,
+    Avatar,
+    ListItem,
+    ListItemAvatar,
+    ListItemText,
+} from "@mui/material";
 
 function SearchBar() {
     const [query, setQuery] = useState("");
@@ -15,7 +23,7 @@ function SearchBar() {
     const handleSearch = async (event, value) => {
         console.log(value);
         setQuery(value);
-        if (value.length >= 3 && event.type=='change') {
+        if (value.length >= 3 && event.type === "change") {
             setLoading(true);
             try {
                 const response = await axios.get(
@@ -53,6 +61,21 @@ function SearchBar() {
                 onInputChange={handleSearch}
                 onChange={handleSelect}
                 loading={loading}
+                renderOption={(props, option) => (
+                    <ListItem {...props} key={option.id} alignItems="center">
+                        <ListItemAvatar>
+                            <Avatar
+                                src={option.image}
+                                alt={option.firstName}
+                                sx={{ width: 40, height: 40 }}
+                            />
+                        </ListItemAvatar>
+                        <ListItemText
+                            primary={`${option.firstName} ${option.lastName}`}
+                            secondary={`${option.email} - ${option.ssn}`}
+                        />
+                    </ListItem>
+                )}
                 renderInput={(params) => (
                     <TextField
                         {...params}
