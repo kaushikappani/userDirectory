@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { AppBar, Toolbar, Typography, IconButton, Snackbar, Alert } from "@mui/material";
+import React, { use, useState } from "react";
+import { AppBar, Toolbar, Typography, IconButton, Snackbar, Alert, CircularProgress } from "@mui/material";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { Link } from "react-router-dom";
@@ -10,9 +10,12 @@ const NavBar = ({ darkMode, setDarkMode }) => {
     const [openSnackbar, setOpenSnackbar] = useState(false);
     const [snackbarMessage, setSnackbarMessage] = useState("");
     const [snackbarSeverity, setSnackbarSeverity] = useState("success");
+    const [loading, setLoading] = useState(false);
+
 
     const handleLoadData = async () => {
         try {
+            setLoading(true);
             const response = await axios.post(`${config.API_BASE_URL}/load`);
             if (response.status === 200) {
                 setSnackbarMessage("Users loaded successfully");
@@ -26,6 +29,7 @@ const NavBar = ({ darkMode, setDarkMode }) => {
             setSnackbarSeverity("error");
         } finally {
             setOpenSnackbar(true);
+            setLoading(false);
         }
     };
 
@@ -55,8 +59,8 @@ const NavBar = ({ darkMode, setDarkMode }) => {
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
                         User Directory
                     </Typography>
-
-                    <Typography
+                    {loading && <CircularProgress color="inherit" size="30px" sx={{mr:2}} /> }
+                    {!loading && <Typography
                         component="button"
                         onClick={handleLoadData}
                         sx={{
@@ -70,7 +74,7 @@ const NavBar = ({ darkMode, setDarkMode }) => {
                         }}
                     >
                         Load Data
-                    </Typography>
+                    </Typography>}
                     <IconButton onClick={() => setDarkMode(!darkMode)} color="inherit">
                         {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
                     </IconButton>
