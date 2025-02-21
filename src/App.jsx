@@ -25,7 +25,7 @@ function App() {
             <SearchBar />
           </Box>
           <Routes>
-            <Route path="/user/:id" element={<UserDetails />} />
+            <Route path="/user/:id" element={<UserDetails />} exact />
           </Routes>
         </Container>
         <Footer />
