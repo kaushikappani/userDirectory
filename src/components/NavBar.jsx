@@ -46,17 +46,13 @@ const NavBar = ({ darkMode, setDarkMode }) => {
                         variant="h6"
                         sx={{
                             flexGrow: 1,
-                            display: { xs: "none", md: "flex" },
+                            display: { md: "flex" },
                             textDecoration: "none",
                             color: "inherit",
                         }}
                         component={Link}
                         to="/"
                     >
-                        User Directory
-                    </Typography>
-
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
                         User Directory
                     </Typography>
                     {loading && <CircularProgress color="inherit" size="30px" sx={{mr:2}} /> }
