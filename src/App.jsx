@@ -5,6 +5,7 @@ import "./App.css";
 import SearchBar from "./components/SearchBar";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
+import RecentSearch from "./components/RecentSearch";
 
 const darkTheme = createTheme({ palette: { mode: 'dark' } });
 const lightTheme = createTheme({ palette: { mode: 'light' } });
@@ -25,6 +26,7 @@ function App() {
             <SearchBar />
           </Box>
           <Routes>
+            <Route path="/" element={<RecentSearch />} exact />
             <Route path="/user/:id" element={<UserDetails />} exact />
           </Routes>
         </Container>
