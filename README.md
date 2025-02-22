@@ -52,6 +52,7 @@ const config = {
 
 export default config;
 ```
+Backend Hosted at https://users-api-fjtt.onrender.com   
 Server GIT https://github.com/kaushikappani/users-api
 
 
