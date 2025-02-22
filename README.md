@@ -30,7 +30,7 @@ This is a single-page React application using Material-UI that implements a type
    ```
 3. Start the development server:
    ```bash
-   npm start
+   npm run dev
    ```
 
 ## Build and Run
