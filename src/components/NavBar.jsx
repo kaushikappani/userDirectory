@@ -75,8 +75,8 @@ const NavBar = ({ darkMode, setDarkMode }) => {
                     >
                         Load Data
                     </Typography>}
-                    <IconButton onClick={() => setDarkMode(!darkMode)} color="inherit">
-                        {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
+                    <IconButton aria-label="Toggle Theme" onClick={() => setDarkMode(!darkMode)} color="inherit">
+                        {darkMode ? <Brightness7Icon  /> : <Brightness4Icon  />}
                     </IconButton>
                 </Toolbar>
             </AppBar>

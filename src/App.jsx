@@ -5,7 +5,7 @@ import "./App.css";
 import SearchBar from "./components/SearchBar";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
-import RecentSearch from "./components/RecentSearch";
+import RecentSearch from "./pages/RecentSearch";
 
 const darkTheme = createTheme({ palette: { mode: 'dark' } });
 const lightTheme = createTheme({ palette: { mode: 'light' } });
